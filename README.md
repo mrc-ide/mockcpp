@@ -77,3 +77,8 @@ context("Can mock a virtual method") {
 For basic examples, please refer to: `src/test-mocking.cpp`
 
 For more advanced examples please refer to the [trompeloeil documentation](https://github.com/rollbear/trompeloeil#documentation)
+
+## License
+
+This R package is licenced under MIT but is mostly made of the Boost licensed
+trompeloeil library.
