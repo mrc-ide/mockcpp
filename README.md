@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of mockcpp is to package up a testthat integration of [trompeloeil](https://github.com/rollbear/trompeloei)
+The goal of mockcpp is to package up a testthat integration of [trompeloeil](https://github.com/rollbear/trompeloeil)
 
 Trompeloeil is...
 > A thread-safe header-only mocking framework for C++11/14 using the Boost Software License 1.0
