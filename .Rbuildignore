@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 docker
 .github
+Makefile

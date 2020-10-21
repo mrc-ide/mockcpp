@@ -1,0 +1,46 @@
+--- trompeloeil.hpp	2020-10-21 14:57:20.000000000 +0100
++++ trompeloeil.hpp	2020-10-21 15:02:53.000000000 +0100
+@@ -13,11 +13,11 @@
+  */
+ 
+ 
+-#ifndef TROMPELOEIL_CATCH2_HPP_
+-#define TROMPELOEIL_CATCH2_HPP_
++#ifndef TROMPELOEIL_TESTTHAT_HPP_
++#define TROMPELOEIL_TESTTHAT_HPP_
+ 
+-#ifndef CATCH_VERSION_MAJOR
+-#error "<catch.hpp> must be included before <catch2/trompeloeil.hpp>"
++#ifndef TESTTHAT_HPP
++#error "<testthat.h> must be included before <testthat/trompeloeil.hpp>"
+ #endif
+ 
+ #include "../trompeloeil.hpp"
+@@ -37,12 +37,12 @@
+     auto failure = os.str();
+     if (s == severity::fatal)
+     {
+-      FAIL(failure);
++      CATCH_FAIL(failure);
+     }
+     else
+     {
+-      CAPTURE(failure);
+-      CHECK(failure.empty());
++      CATCH_CAPTURE(failure);
++      CATCH_CHECK(failure.empty());
+     }
+   }
+ 
+@@ -50,9 +50,9 @@
+   inline void reporter<specialized>::sendOk(
+     const char* trompeloeil_mock_calls_done_correctly)
+   {      
+-      REQUIRE(trompeloeil_mock_calls_done_correctly != 0);
++      CATCH_REQUIRE(trompeloeil_mock_calls_done_correctly != 0);
+   }
+ }
+ 
+ 
+-#endif //TROMPELOEIL_CATCH2_HPP_
++#endif //TROMPELOEIL_TESTTHAT_HPP_
