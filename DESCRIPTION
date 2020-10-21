@@ -13,9 +13,15 @@ Authors@R: c(
     family = "",
     role = c('cph'),
     email = 'giovanni.charles10@imperial.ac.uk'
+  ),
+  person(
+    given = "Björn",
+    family = "Fahller",
+    role = c('cph'),
+    email = 'bjorn@fahller.se'
   ))
 Description: A header only library integrating testthat with trompeoeil to provide mocking.
-License: MIT + file LICENSE
+License: MIT + file LICENSE | BSL-1.0
 Encoding: UTF-8
 LazyData: true
 Imports:
