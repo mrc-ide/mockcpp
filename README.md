@@ -81,4 +81,4 @@ For more advanced examples please refer to the [trompeloeil documentation](https
 ## License
 
 This R package is licenced under MIT but is mostly made of the Boost licensed
-trompeloeil library.
+trompeloeil library. (Full license at [inst/LICENSE.bsl-1](https://github.com/mrc-ide/mockcpp/blob/master/inst/LICENSE.bsl-1))
