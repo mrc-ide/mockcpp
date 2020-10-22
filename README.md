@@ -2,6 +2,7 @@
 # mockcpp
 
 <!-- badges: start -->
+[![R build status](https://github.com/mrc-ide/mockcpp/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/mockcpp/actions)
 <!-- badges: end -->
 
 The goal of mockcpp is to package up a testthat integration of (trompeloeil)[https://github.com/rollbear/trompeloeil]
@@ -31,7 +32,6 @@ Imports:
   mockcpp
 LinkingTo:
   ...
-  Rcpp,
   testthat,
   mockcpp
 ```
