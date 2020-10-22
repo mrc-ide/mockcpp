@@ -1,0 +1,46 @@
+--- trompeloeil.hpp	2020-10-21 14:57:20.000000000 +0100
++++ trompeloeil.hpp	2020-10-21 15:11:56.000000000 +0100
+@@ -132,6 +132,7 @@
+ #include <initializer_list>
+ #include <type_traits>
+ #include <utility>
++#include <R_ext/Error.h>
+ 
+ 
+ #ifndef TROMPELOEIL_CUSTOM_ATOMIC
+@@ -1577,7 +1578,7 @@
+     const
+     noexcept
+     {
+-      std::abort(); // must never be called
++      Rf_error("Trompeloeil error: unreachable code"); // must never be called
+     }
+   };
+ 
+@@ -2775,7 +2776,7 @@
+   {
+     TROMPELOEIL_NORETURN static R value()
+     {
+-      std::abort(); // must never be called
++      Rf_error("Trompeloeil error: unreachable code"); // must never be called
+     }
+   };
+ 
+@@ -3190,7 +3191,7 @@
+       }
+     }
+     send_report<specialized>(severity::fatal, location{}, os.str());
+-    std::abort(); // must never get here.
++    Rf_error("Trompeloeil error: unreachable code"); // must never get here.
+   }
+ 
+   template <typename Sig>
+@@ -3526,7 +3527,7 @@
+         try
+         {
+           h(p);
+-          abort();
++          Rf_error("Trompeloeil error: unreachable code");
+         }
+         catch (...)
+         {

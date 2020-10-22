@@ -2,6 +2,7 @@
 # mockcpp
 
 <!-- badges: start -->
+[![R build status](https://github.com/mrc-ide/mockcpp/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/mockcpp/actions)
 <!-- badges: end -->
 
 The goal of mockcpp is to package up a testthat integration of [trompeloeil](https://github.com/rollbear/trompeloeil)
@@ -31,7 +32,6 @@ Imports:
   mockcpp
 LinkingTo:
   ...
-  Rcpp,
   testthat,
   mockcpp
 ```
@@ -77,3 +77,8 @@ context("Can mock a virtual method") {
 For basic examples, please refer to: `src/test-mocking.cpp`
 
 For more advanced examples please refer to the [trompeloeil documentation](https://github.com/rollbear/trompeloeil#documentation)
+
+## License
+
+This R package is licenced under MIT but is mostly made of the Boost licensed
+trompeloeil library. (Full license at [inst/LICENSE.bsl-1](https://github.com/mrc-ide/mockcpp/blob/master/inst/LICENSE.bsl-1))

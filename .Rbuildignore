@@ -1,0 +1,5 @@
+^mockcpp\.Rproj$
+^\.Rproj\.user$
+docker
+.github
+Makefile

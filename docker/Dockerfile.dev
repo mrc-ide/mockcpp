@@ -1,0 +1,11 @@
+# Dockerfile for package buliding and running this package
+FROM rocker/r-ver:4.0.2
+
+RUN apt-get update && apt-get -y install \
+  libxml2-dev
+
+RUN R -e "install.packages(c('devtools', 'remotes'))"
+
+COPY DESCRIPTION /home/docker/mockcpp/
+
+RUN R -e "remotes::install_deps('/home/docker/mockcpp', dependencies = TRUE)"
