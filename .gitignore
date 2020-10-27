@@ -3,3 +3,6 @@
 .RData
 .DS_Store
 *.Rproj
+inst/**/*.o
+inst/**/*.so
+inst/doc
