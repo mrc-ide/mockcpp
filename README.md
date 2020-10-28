@@ -36,45 +36,17 @@ LinkingTo:
   mockcpp
 ```
 
-## Example
+3. Make sure you are compiling against the C++14 standard
 
-You can then mock your C++ classes like this:
+You should add the following to your Makevars:
 
-``` cpp
-#include <testthat.h>
-#include <mockcpp.h> //It is important that mockcpp.h is included *after* testthat.h
-
-class Adder {
-  public:
-    virtual int add(int a, int b) const {
-      return a + b;
-    };
-    virtual int add(int a, int b, int c) const {
-      return a + b + c;
-    };
-    virtual double add(double a, double b) const {
-      return a + b;
-    };
-};
-
-class MockAdder : public Adder {
-  MAKE_CONST_MOCK2(add, int(int, int), override);
-  MAKE_CONST_MOCK3(add, int(int, int, int), override);
-  MAKE_CONST_MOCK2(add, double(double, double), override);
-};
-
-context("Can mock a virtual method") {
-
-  test_that("you can change the return value") {
-    MockAdder adder;
-    REQUIRE_CALL(adder, add(1, 2)).RETURN(4);
-    expect_true(adder.add(1, 2) == 4);
-  }
-  
-}
+```
+CXX_STD = CXX14
 ```
 
-For basic examples, please refer to: `src/test-mocking.cpp`
+## Example
+
+For basic examples, please refer to: `vignettes/Examples.Rmd` or `src/test-mocking.cpp`
 
 For more advanced examples please refer to the [trompeloeil documentation](https://github.com/rollbear/trompeloeil#documentation)
 

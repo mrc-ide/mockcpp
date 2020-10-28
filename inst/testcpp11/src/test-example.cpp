@@ -17,8 +17,10 @@ context("Can mock an RNG") {
     auto size = mock_values.size();
     REQUIRE_CALL(rng, uniform(_)).RETURN(mock_values);
     auto actual = rng.uniform(size);
-    for (auto i = 0l; i < size; ++i) {
-      expect_true(actual[i] == mock_values[i]);
+    // Newer GCC builds (Mac OS and Linux can use auto i = 0
+    // Older windows builds need to specify a type to avoid ambiguity errors 3/11/20 R 4.0.3
+    for (cpp11::writable::doubles::size_type i = 0; i < size; ++i) {
+      expect_true(actual[i] == mock_values[i] );
     }
   }
 

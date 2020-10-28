@@ -31,5 +31,7 @@ LinkingTo:
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    Rcpp,
+    cpp11
 VignetteBuilder: knitr

@@ -44,9 +44,6 @@ We can then build our package and run the test to ensure our mocking works:
 ```{r}
 temp_lib <- tempdir(check = FALSE)
 
-# Install Rcpp
-install.packages('Rcpp', repos = 'https://cloud.r-project.org/', lib = temp_lib)
-
 # Install test package
 install.packages(
   system.file('testrcpp', package = 'mockcpp', mustWork = TRUE),
@@ -56,7 +53,6 @@ install.packages(
 )
 
 # load test package
-library('Rcpp', lib.loc = temp_lib)
 library('testrcpp', lib.loc = temp_lib)
 
 # run the test
@@ -94,9 +90,6 @@ We can build and test this package in a similar way:
 ```{r}
 temp_lib <- tempdir(check = FALSE)
 
-# Install Cpp11
-install.packages('cpp11', repos = 'https://cloud.r-project.org/', lib = temp_lib)
-
 # Install test package
 install.packages(
   system.file('testcpp11', package = 'mockcpp', mustWork = TRUE),
@@ -106,7 +99,6 @@ install.packages(
 )
 
 # load test package
-library('cpp11', lib.loc = temp_lib)
 library('testcpp11', lib.loc = temp_lib)
 
 # run the test
