@@ -1,0 +1,112 @@
+---
+title: "Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, setup}
+print_code <- function(filename) {
+  cat(readChar(filename, file.info(filename)$size))
+}
+```
+
+This vignette builds and tests some example projects which use mockcpp, to show you how you can include them in your package.
+
+# Rcpp
+
+We have created a toy random number generator using [Rcpp](https://github.com/RcppCore/Rcpp)
+
+```{r}
+print_code(
+  system.file('testrcpp/src/code.h', package = 'mockcpp', mustWork = TRUE)
+)
+```
+Let's say we want to mock the output of our RNG. We can write a testthat test like so:
+
+```{r}
+print_code(
+  system.file('testrcpp/src/test-example.cpp', package = 'mockcpp', mustWork = TRUE)
+)
+```
+
+We can then build our package and run the test to ensure our mocking works:
+
+```{r}
+temp_lib <- tempdir(check = FALSE)
+
+# Install test package
+install.packages(
+  system.file('testrcpp', package = 'mockcpp', mustWork = TRUE),
+  repos = NULL,
+  type = 'source',
+  lib = temp_lib
+)
+
+# load test package
+library('testrcpp', lib.loc = temp_lib)
+
+# run the test
+testthat::test_file(
+  system.file(
+    'testrcpp/tests/testthat/test-cpp.R',
+    package = 'mockcpp',
+    mustWork = TRUE
+  )
+)
+```
+
+# Cpp11
+
+We can create a similar test for code written using [cpp11](https://github.com/r-lib/cpp11).
+
+Here's a toy RNG:
+
+```{r}
+print_code(
+  system.file('testcpp11/src/code.h', package = 'mockcpp', mustWork = TRUE)
+)
+```
+
+And the corresponding test:
+
+```{r}
+print_code(
+  system.file('testcpp11/src/test-example.cpp', package = 'mockcpp', mustWork = TRUE)
+)
+```
+
+We can build and test this package in a similar way:
+
+```{r}
+temp_lib <- tempdir(check = FALSE)
+
+# Install test package
+install.packages(
+  system.file('testcpp11', package = 'mockcpp', mustWork = TRUE),
+  repos = NULL,
+  type = 'source',
+  lib = temp_lib
+)
+
+# load test package
+library('testcpp11', lib.loc = temp_lib)
+
+# run the test
+testthat::test_file(
+  system.file(
+    'testcpp11/tests/testthat/test-cpp.R',
+    package = 'mockcpp',
+    mustWork = TRUE
+  )
+)
+```

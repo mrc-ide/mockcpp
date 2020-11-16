@@ -29,3 +29,9 @@ Imports:
 LinkingTo: 
     testthat
 RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    Rcpp,
+    cpp11
+VignetteBuilder: knitr
