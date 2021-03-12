@@ -42,18 +42,10 @@ print_code(
 We can then build our package and run the test to ensure our mocking works:
 
 ```{r}
-temp_lib <- tempdir(check = FALSE)
-
-# Install test package
-install.packages(
-  system.file('testrcpp', package = 'mockcpp', mustWork = TRUE),
-  repos = NULL,
-  type = 'source',
-  lib = temp_lib
-)
-
 # load test package
-library('testrcpp', lib.loc = temp_lib)
+pkgload::load_all(
+  system.file('testrcpp', package = 'mockcpp', mustWork = TRUE)
+)
 
 # run the test
 testthat::test_file(
@@ -88,18 +80,10 @@ print_code(
 We can build and test this package in a similar way:
 
 ```{r}
-temp_lib <- tempdir(check = FALSE)
-
-# Install test package
-install.packages(
-  system.file('testcpp11', package = 'mockcpp', mustWork = TRUE),
-  repos = NULL,
-  type = 'source',
-  lib = temp_lib
-)
-
 # load test package
-library('testcpp11', lib.loc = temp_lib)
+pkgload::load_all(
+  system.file('testcpp11', package = 'mockcpp', mustWork = TRUE)
+)
 
 # run the test
 testthat::test_file(

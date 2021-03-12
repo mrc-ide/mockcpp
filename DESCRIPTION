@@ -1,5 +1,5 @@
 Package: mockcpp
-Title: A package for mocking in C++ with testthat
+Title: A Package for Mocking in C++ with Testthat
 Version: 0.0.1
 Authors@R: c(
   person(
@@ -20,7 +20,7 @@ Authors@R: c(
     role = c('cph'),
     email = 'bjorn@fahller.se'
   ))
-Description: A header only library integrating testthat with trompeoeil to provide mocking.
+Description: A header only library integrating 'testthat' with 'trompeoeil' to provide mocking.
 License: MIT + file LICENSE | BSL-1.0
 Encoding: UTF-8
 LazyData: true
@@ -33,5 +33,7 @@ Suggests:
     knitr,
     rmarkdown,
     Rcpp,
-    cpp11
+    cpp11,
+    pkgload,
+    decor
 VignetteBuilder: knitr
