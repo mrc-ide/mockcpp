@@ -1,5 +1,5 @@
 Package: mockcpp
-Title: A Package for Mocking in C++ with Testthat
+Title: Mocking in C++ with 'testthat'
 Version: 0.0.1
 Authors@R: c(
   person(
