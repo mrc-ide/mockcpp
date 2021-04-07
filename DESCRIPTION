@@ -29,7 +29,6 @@ Description: A header only library integrating 'testthat' with 'trompeoeil' to
     'trompeoeil' is a C++ header only library for mocking.
 License: MIT + file LICENSE | BSL-1.0
 Encoding: UTF-8
-LazyData: true
 Imports:
   testthat (>= 2.1.0)
 LinkingTo: 

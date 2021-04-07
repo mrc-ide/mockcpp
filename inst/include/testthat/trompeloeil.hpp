@@ -16,10 +16,7 @@
 #ifndef TROMPELOEIL_TESTTHAT_HPP_
 #define TROMPELOEIL_TESTTHAT_HPP_
 
-#ifndef TESTTHAT_HPP
-#error "<testthat.h> must be included before <testthat/trompeloeil.hpp>"
-#endif
-
+#include <testthat.h>
 #include "../trompeloeil.hpp"
 
 namespace trompeloeil
