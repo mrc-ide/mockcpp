@@ -38,6 +38,7 @@ RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,
+    pkgbuild,
     Rcpp,
     cpp11,
     pkgload,
